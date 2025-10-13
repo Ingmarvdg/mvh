@@ -39,7 +39,7 @@ export default {
         loadImages() {
             try {
             const imagesContext = require.context(
-                '@/assets/projects/',
+                `${process.env.BASE_URL}projects`,
                 true,
                 /\.(png|jpe?g|webp|gif)$/i
             );
