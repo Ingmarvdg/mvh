@@ -37,11 +37,15 @@ export default {
     },
     methods: {
         loadImages() {
+            try {
             const imagesContext = require.context(
                 '@/assets/projects/',
                 true,
                 /\.(png|jpe?g|webp|gif)$/i
             );
+            } catch (err) {
+                console.warn("Missing image", fileName)
+            }
 
             const folderMap = {};
 
