@@ -1,13 +1,21 @@
-.content {
-    margin-left: 10%;
-    margin-right: 10%;
+:root {
+    --lightbase: #f5f1e6;
+    --darkbase: #5a82b3;
+    --highlight: #DA1219;
 }
 
-body, #app {
-  /* Soft sandy beige background */
-  background: #f7e9d7;
+.content {
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+body,
+#app {
+  max-width: 100%;
+  overflow-x: hidden;
+  background: var(--lightbase);
   min-height: 100vh;
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #3a3a3a;
+  color: var(--lightbase);
 }

@@ -7,7 +7,8 @@
   },
   "homepage": "https://ingmarvdg.github.io/mvh/",
   "scripts": {
-    "build": "vue-cli-service build",
+    "build": "npm run generate-manifest && vue-cli-service build",
+    "generate-manifest": "node generate_manifest.js",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
@@ -21,4 +22,3 @@
     "gh-pages": "^6.3.0"
   }
 }
-

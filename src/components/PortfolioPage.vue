@@ -7,6 +7,7 @@
                 :alt="`${folderName}-${index}`" />
         </flickity>
     </div>
+    <PageFooter />
 </template>
 
 <script>
@@ -37,27 +38,18 @@ export default {
     },
     methods: {
         loadImages() {
-            const imagesContext = require.context(
-                `${process.env.BASE_URL}projects`,
-                true,
-                /\.(png|jpe?g|webp|gif)$/i
-            );
-            
-            const folderMap = {};
-
-            imagesContext.keys().forEach((key) => {
-                const imgSrc = imagesContext(key);
-                const pathParts = key.split('/');
-                const folderName = pathParts[1];
-
-                if (!folderMap[folderName]) {
-                    folderMap[folderName] = [];
-                }
-
-                folderMap[folderName].push(imgSrc);
-            });
-
-            this.folders = folderMap;
+            fetch(`/mvh/manifest.json`)
+                .then(res => {
+                    if (!res.ok) throw new Error('Failed to fetch manifest');
+                    return res.json();
+                })
+                .then(folderMap => {
+                    console.log(folderMap)
+                    this.folders = folderMap;
+                })
+                .catch(err => {
+                    console.error('Error loading manifest.json:', err);
+                });
         }
     }
 };
@@ -73,20 +65,22 @@ export default {
     overflow: visible;
     /* Ensure next slide slice is visible */
     margin-left: auto;
-    margin-right: auto;  /* Centers horizontally */
+    margin-right: auto;
+    /* Centers horizontally */
 }
 
 .gallery::after {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none; /* allow clicks through */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    /* allow clicks through */
 
-  background:
-    linear-gradient(to right, #f7e9d7 0%, transparent 15%, transparent 85%, #f7e9d7 100%),
-    linear-gradient(to top, #f7e9d7 0%, transparent 10%);
+    background:
+        linear-gradient(to right, var(--lightbase) 0%, transparent 5%, transparent 95%, var(--lightbase) 100%);
 }
 
 .carousel-cell {
@@ -99,5 +93,4 @@ export default {
     width: calc(100% - 60px);
     /* Make main slide take most of width minus slice */
 }
-
 </style>

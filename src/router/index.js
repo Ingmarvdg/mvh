@@ -1,10 +1,10 @@
 import PortfolioPage from "@/components/PortfolioPage.vue";
 import AboutPage from "@/components/AboutPage.vue";
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createWebHashHistory } from "vue-router";
 
 const routes = [
     {
-        path: "/",
+        path: "/mvh/",
         name: "Portfolio",
         component: PortfolioPage,
     },
@@ -16,7 +16,7 @@ const routes = [
 ]
 
 const router = createRouter({
-    history: createWebHistory(),
+    history: createWebHashHistory(),
     routes: routes
 })
 
