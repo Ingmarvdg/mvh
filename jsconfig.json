@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./mvh/*"]
     }
   },
   "exclude": ["node_modules", "dist"]

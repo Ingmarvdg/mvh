@@ -9,7 +9,7 @@
   "scripts": {
     "build": "npm run generate-manifest && vue-cli-service build",
     "generate-manifest": "node generate_manifest.js",
-    "deploy": "gh-pages -d dist"
+    "deploy": "npx gh-pages -d dist"
   },
   "dependencies": {
     "css-loader": "^7.1.2",

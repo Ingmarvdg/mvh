@@ -3,7 +3,7 @@
         <a class="social-button" href="https://www.instagram.com/myrthevanheerwaarden/" target="_blank" rel="noopener noreferrer">
             <img src="../assets/instagram.png" />
         </a>
-        <a class="social-button" href="https://www.instagram.com/myrthevanheerwaarden/" target="_blank" rel="noopener noreferrer">
+        <a class="social-button" href="https://www.linkedin.com/in/myrthe-van-heerwaarden-0a3262209/" target="_blank" rel="noopener noreferrer">
             <img src="../assets/linkedin.png" />
         </a>
     </div>

@@ -4,7 +4,7 @@ import { createRouter, createWebHashHistory } from "vue-router";
 
 const routes = [
     {
-        path: "/mvh/",
+        path: "/mvh",
         name: "Portfolio",
         component: PortfolioPage,
     },
