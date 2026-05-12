@@ -1,6 +1,5 @@
-body {
-  font-family: sans-serif;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem;
+:root {
+    --lightbase: #f5f1e6;
+    --darkbase: #5a82b3;
+    --highlight: #DA1219;
 }
