@@ -1,4 +1,3 @@
 baseURL = 'https://example.org/'
-locale = 'en-us'
+locale = 'nl-NL'
 title = 'MVH'
-theme = 'yingyang'
