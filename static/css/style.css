@@ -12,6 +12,20 @@
   --disqus-bg: white;
 }
 
+html {
+  touch-action: auto;
+}
+
+@media (max-width: 768px) {
+  main {
+    width: 92vw;
+  }
+
+  .carousel-cell {
+    width: 95%;
+  }
+}
+
 body {
   max-width: 100%;
   background: var(--bg-color);
