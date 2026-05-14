@@ -135,3 +135,20 @@ main {
   display: block;
   border-radius: 8px;
 }
+
+@media (max-width: 768px) {
+  body {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  main {
+    width: 100%;
+    padding: 0 10px;
+    gap: 20px; /* tighter spacing for mobile */
+  }
+
+  .carousel-cell {
+    width: 95%;
+  }
+}
