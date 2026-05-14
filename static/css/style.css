@@ -30,7 +30,9 @@ main p {
   margin-bottom: 1rem;
 }
 
-main h1, main h2, main h3 {
+main h1,
+main h2,
+main h3 {
   line-height: 1.2;
   margin-top: 1.5em;
 }
@@ -95,8 +97,10 @@ main h1, main h2, main h3 {
 }
 
 main {
-  width: 70vw;              /* 100% - 15% left - 15% right */
-  margin: 0 auto;          /* center */
+  width: 70vw;
+  /* 100% - 15% left - 15% right */
+  margin: 0 auto;
+  /* center */
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -114,13 +118,11 @@ main {
   pointer-events: none;
   z-index: 10;
 
-  background: linear-gradient(
-    to right,
-    var(--bg-color) 0%,
-    transparent 8%,
-    transparent 92%,
-    var(--bg-color) 100%
-  );
+  background: linear-gradient(to right,
+      var(--bg-color) 0%,
+      transparent 8%,
+      transparent 92%,
+      var(--bg-color) 100%);
 }
 
 .carousel-cell {
@@ -145,10 +147,21 @@ main {
   main {
     width: 100%;
     padding: 0 10px;
-    gap: 20px; /* tighter spacing for mobile */
+    gap: 20px;
+    /* tighter spacing for mobile */
   }
 
   .carousel-cell {
     width: 95%;
+  }
+
+  .socials img {
+    height: 28px;
+    /* fixed size prevents zoom scaling issues */
+    width: 28px;
+    object-fit: contain;
+
+    transition: transform 0.2s ease;
+    cursor: pointer;
   }
 }
