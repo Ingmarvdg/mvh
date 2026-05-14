@@ -5,18 +5,17 @@
   {{ range where .Site.RegularPages "Section" "portfolio" }}
 
     {{ $imageDir := .Params.image_path }}
-    {{ $images := resources.Match (printf "%s/*" $imageDir) }}
 
     <div class="portfolio-carousel">
 
-      {{ range $images }}
+      {{ range readDir (printf "static/%s" $imageDir) }}
+        {{ if not .IsDir }}
 
-        <a href="{{ .RelPermalink }}">
           <div class="carousel-cell">
-            <img src="{{ .RelPermalink }}" alt="Portfolio Image">
+            <img src="/{{ $imageDir }}/{{ .Name }}" alt="Portfolio Image">
           </div>
-        </a>
 
+        {{ end }}
       {{ end }}
 
     </div>
