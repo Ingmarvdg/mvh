@@ -1,17 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>{{ .Site.Title }}</title>
 
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
+  <div class="header">
+    <div class="header-logo-wrapper">
+      {{ if eq .RelPermalink "/over/" }}
+      <a href="/">
+        <img src="/icons/name.png" alt="MvH" class="header-logo">
+      </a>
+      {{ else }}
+      <a href="/over/">
+        <img src="/icons/name.png" alt="MvH" class="header-logo">
+      </a>
+      {{ end }}
+    </div>
+    <!-- Social Icons -->
+    <div class="socials">
+      <a href="https://www.instagram.com/myrthevanheerwaarden/" target="_blank" rel="noopener noreferrer">
+        <img src="/icons/instagram.png" alt="Instagram">
+      </a>
 
+      <a href="https://www.linkedin.com/in/myrthe-van-heerwaarden-0a3262209/" target="_blank" rel="noopener noreferrer">
+        <img src="/icons/linkedin.png" alt="LinkedIn">
+      </a>
+    </div>
+  </div>
   <main>
-    {{ block "main" . }}{{ end }}
+    <div class="main">
+      {{ block "main" . }}{{ end }}
+    </div>
   </main>
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('.portfolio-carousel').forEach(function (el) {
+        new Flickity(el, {
+          contain: true,
+          cellAlign: "left",
+          percentPosition: true,
+          groupCells: false,
+
+          prevNextButtons: false,
+          pageDots: true,
+          draggable: true,
+        });
+      });
+    });
+  </script>
 </body>
+
 </html>

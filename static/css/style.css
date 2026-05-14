@@ -1,5 +1,133 @@
+/* global */
+
 :root {
-    --lightbase: #f5f1e6;
-    --darkbase: #5a82b3;
-    --highlight: #DA1219;
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --link-color: #000000;
+  --border-color: #482936;
+  --secondary-text: #666666;
+  --code-bg: #f6f8fa;
+  --blockquote-color: #57606a;
+  --blockquote-border: #d0d7de;
+  --disqus-bg: white;
+}
+
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  background: var(--bg-color);
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+main p {
+  margin-bottom: 1rem;
+}
+
+main h1, main h2, main h3 {
+  line-height: 1.2;
+  margin-top: 1.5em;
+}
+
+.header {
+  width: 100%;
+  min-width: 200px;
+
+  height: clamp(100px, 20vw, 200px);
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+  /* prevents weird overflow growth */
+}
+
+/* TOP HALF */
+.header-logo-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.header-logo {
+  width: 100%;
+  height: 75%;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.header-logo:hover {
+  transform: scale(1.01);
+}
+
+/* BOTTOM HALF */
+.socials {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  overflow: hidden;
+}
+
+/* FIXED, non-scaling icons */
+.socials img {
+  height: 42px;
+  /* fixed size prevents zoom scaling issues */
+  width: 42px;
+  object-fit: contain;
+
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.socials img:hover {
+  transform: scale(1.1);
+}
+
+main {
+  width: 70vw;              /* 100% - 15% left - 15% right */
+  margin: 0 auto;          /* center */
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.portfolio-carousel {
+  position: relative;
+}
+
+.portfolio-carousel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+  z-index: 10;
+
+  background: linear-gradient(
+    to right,
+    var(--bg-color) 0%,
+    transparent 8%,
+    transparent 92%,
+    var(--bg-color) 100%
+  );
+}
+
+.carousel-cell {
+  width: 100%;
+}
+
+.carousel-cell img {
+  width: 100%;
+  object-fit: cover;
+
+  display: block;
+  border-radius: 8px;
 }
