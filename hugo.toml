@@ -1,3 +1,3 @@
-baseURL = 'http://localhost:1313/'
+baseURL = 'mvh.pages.dev'
 locale = 'nl-NL'
-title = 'MVH'
+title = 'Myrthe van Heerwaarden'
