@@ -1,5 +1,5 @@
 ---
-title: "Over"
+title: "About"
 ---
 Opgegroeid op het Waddeneiland Texel waande ik mij als klein meisje al een ware strandjutter. Altijd zoekend naar
 schelpen, schatten en de verhalen achter deze vondsten. Vondsten waar menig mens overheen kijkt. Als illustrator met
