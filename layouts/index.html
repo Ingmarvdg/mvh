@@ -1,27 +1,28 @@
 {{ define "main" }}
+
 <div class="portfolio-list">
 
   {{ range where .Site.RegularPages "Section" "portfolio" }}
 
-  {{ $imageDir := .Params.image_path }}
-  {{ $images := readDir (printf "assets/%s" $imageDir) }}
+    {{ $imageDir := .Params.image_path }}
+    {{ $images := resources.Match (printf "%s/*" $imageDir) }}
 
-  <div class="portfolio-carousel">
-    {{ range $images }}
-    {{ if not .IsDir }}
-    {{ $img := resources.Get (printf "%s/%s" $imageDir .Name) }}
-    {{ with $img }}
-    <a href="{{ .RelPermalink }}">
-      <div class="carousel-cell">
-        <img src="{{ .RelPermalink }}" alt="{{ $.Title }}">
-      </div>
-    </a>
-    {{ end }}
-    {{ end }}
-    {{ end }}
-  </div>
+    <div class="portfolio-carousel">
+
+      {{ range $images }}
+
+        <a href="{{ .RelPermalink }}">
+          <div class="carousel-cell">
+            <img src="{{ .RelPermalink }}" alt="Portfolio Image">
+          </div>
+        </a>
+
+      {{ end }}
+
+    </div>
 
   {{ end }}
 
 </div>
-{{end}}
+
+{{ end }}
