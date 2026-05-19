@@ -26,6 +26,12 @@ body {
   margin-bottom: 5%;
 }
 
+main {
+  min-height: 100vh;       /* fill screen */
+  max-height: 100vh;       /* don’t exceed */
+  overflow-y: hidden;      /* hide vertical scroll */
+}
+
 main p {
   margin-bottom: 1rem;
 }
@@ -66,7 +72,7 @@ main h3 {
 }
 
 .header-logo {
-  height: 80px;       /* or 50px, adjust to taste */
+  height: clamp(50px, 8vw, 50px);      /* or 50px, adjust to taste */
   width: auto;
   object-fit: contain;
   transition: transform 0.2s ease;
